@@ -13,7 +13,7 @@ export class FakeHttpService {
   GetQuote(dataNeeded: number, idFrequency: number): Observable<IQuote> {
 
     function calculateOfferInfo(dataNeeded: number, idFrequency: number) {
-      return (10 + dataNeeded *0.002) * frequenciesList.find(frequency => frequency.id === idFrequency)!.multiplier;
+      return Math.round(((10 + dataNeeded *0.002) * frequenciesList.find(frequency => frequency.id === idFrequency)!.multiplier) * 100) / 100;
     }
 
     return of({id: Math.round(Math.random() * 1000000) , price: calculateOfferInfo(dataNeeded, idFrequency)}).pipe(
