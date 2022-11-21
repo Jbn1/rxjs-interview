@@ -9,6 +9,7 @@
       <mat-form-field appearance="fill" class="form-field">
         <mat-label>Data</mat-label>
         <input [formControl]="dataNeeded" matInput type="number">
+        <mat-error *ngIf="dataNeeded.invalid">Minimum 100 Gb</mat-error>
         <mat-hint align="end">Select the number of GigaBytes you need</mat-hint>
       </mat-form-field>
 

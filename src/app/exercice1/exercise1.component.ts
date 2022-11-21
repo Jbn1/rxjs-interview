@@ -13,16 +13,20 @@ export class Exercise1Component {
 
   formGroup: FormGroup;
 
+  //To get the static list of all available frequencies
   frequencies = frequenciesList;
+
   totalCustomers$: Observable<number>;
 
   constructor(private readonly fakeHttpService: FakeHttpService) {
-    this.totalCustomers$ = this.fakeHttpService.GetTotalCustomers();
-    this.formGroup = new FormGroup({
-      frequency: new FormControl<number>(1),
-      dataNeeded: new FormControl<number>(100, Validators.min(100))
-    });
+    /*FakeHttpService: function GetQuote(dataNeeded: number, idFrequency: number): Observable<IQuote> */
 
+    this.totalCustomers$ = this.fakeHttpService.GetTotalCustomers();
+
+    this.formGroup = new FormGroup({
+      frequency: new FormControl<number | null>(null),
+      dataNeeded: new FormControl<number| null>(null, Validators.min(100))
+    });
   }
 
   get frequency() : FormControl{
