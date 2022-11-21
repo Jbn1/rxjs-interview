@@ -1,27 +1,23 @@
-# RxjsInterview
+Question 1
+We have an observable, totalCustomers, which displays the total number of the company. We want to have this number appear on the subtitle of the card. How are we going to do this? Why this approach?
+See if the candidate goes for the async pipe or a subscribe and see if he knows the idea of unsubscribing.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.0.
+Question 2
+We have the function GetQuotes on our FakeHttpService which returns an object containing the id and the price of the quote. We want to trigger a request to the back end when both fields are set and display the PRICE.
+a)	How are going to do this? CombineLatest -> switchMap -> map
+b)	If we want to not trigger a request if Data is < 100, how to do this? Filter
+c)	How to trigger the request at the start of the page? startWith
+d)	What s the difference between map and switchmap?
+(Bonus) Do you know an alternative to map in this case? Pluck
 
-## Development server
+Question 3
+We are going to add an extra line to display the quote Id, which is contained alongside the price. What is your approach?
+See the approach (if he goes for double pipe or subscribes) and if he knows shareReplay.
+If he forgot about ShareReplay, show the console: what caused the double call?
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Question 4
+We want to display a progress bar when the request is ongoing. 
+a)	How to do this with observable?
+See if he goes for a subject and a tap.
+b)	What is the tap operator?
+c)	What is OnPush?
