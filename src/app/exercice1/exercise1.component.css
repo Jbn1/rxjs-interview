@@ -1,0 +1,16 @@
+.form-field {
+  flex: 1;
+  margin: 10px;
+}
+
+.card {
+  width: 800px;
+  margin: 15px;
+}
+
+.content {
+  margin: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
